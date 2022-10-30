@@ -26,10 +26,11 @@ function QuestionJS(option) {
     let questionSet     = document.createElement('div');
     let questionSetId   = option.id;
     questionSet.id      = questionSetId;
-    let questions       = option.questions;
+    questionSet.classList.add('set');
+    let questions       = [...option.questions];
     let order           = 0;
     
-    // console.log(option);
+    //console.log(questions);
     // console.log([questionSet]);
     // console.log(questionSet);
     // console.log(typeof questionSet);
@@ -38,7 +39,7 @@ function QuestionJS(option) {
     while (questions.length > 0) {
         order++;
         let question = questions.splice(Math.round(Math.random() * (questions.length - 1)), 1)[0];
-        let answers = question.answers;
+        let answers = [...question.answers];
         let inHTML = '';
         inHTML += `
         <div class="question" --data-true-answer="${question.trueAnswer}">
@@ -55,6 +56,15 @@ function QuestionJS(option) {
         
         questionSet.innerHTML += inHTML
     }; 
+
+    //Delete set    
+    let deleteBnt = document.createElement('button');
+    deleteBnt.classList.add('deleteBnt');
+    deleteBnt.innerText = 'Done';
+    deleteBnt.onclick = function (e) {
+        this.parentElement.remove();
+    }
+    questionSet.appendChild(deleteBnt)
 
     document.body.appendChild(questionSet);
     questionization(questionSet);
