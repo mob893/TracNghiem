@@ -1,0 +1,58 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.747);
+}
+.true {
+    color: rgb(6, 146, 6);  
+    border: 1px solid rgb(6, 146, 6) !important;
+}
+
+.false {
+    color: rgb(192, 0, 0);
+    border: 1px solid rgb(192, 0, 0) !important;
+}
+
+#TinHoc20 {
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+#TinHoc20 .question {
+    margin: 1rem 0;
+    background-color: aliceblue;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#TinHoc20 .question .question__title {
+    font-weight: bold;
+}
+
+#TinHoc20 .question .answers {
+    margin: 1rem 0;
+    /* max-width: 60%; */
+}
+
+#TinHoc20 .question .answers .answer {
+    margin: 0.5rem 0;
+    min-width: 5rem;
+    min-height: 1.5rem;
+    width: fit-content;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#TinHoc20 .question .answers .answer:hover {
+    background-color: rgb(162, 174, 192);
+}
