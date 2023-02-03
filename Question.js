@@ -5,6 +5,7 @@
         id: (id của cái div lớn),
         doTrue: (callback khi chọn câu đúng),
         doFasle: (callback khi chọn câu sai),
+        doResult: (callback kết quả khi bấm kết thúc) (nếu có),
         questions: [
             (bộ các câu hỏi là 1 object)
             {
@@ -57,11 +58,12 @@ function QuestionJS(option) {
         questionSet.innerHTML += inHTML
     }; 
 
-    //Delete set    
+    //Delete set button  
     let deleteBnt = document.createElement('button');
     deleteBnt.classList.add('deleteBnt');
-    deleteBnt.innerText = 'Done';
+    deleteBnt.innerText = 'Xong';
     deleteBnt.onclick = function (e) {
+        doResult();
         this.parentElement.remove();
     }
     questionSet.appendChild(deleteBnt)
@@ -84,9 +86,9 @@ function QuestionJS(option) {
             //console.log(answers[i].attributes.getNamedItem('--data-boolean'));
         answers[i].onclick = e => {
             let answer = e.target;
-            // console.log(answer.innerHTML);
-            // console.log(question.attributes.item(1).value);
-            if (answer.innerHTML.trim() == question.attributes.getNamedItem('--data-true-answer').value.trim()){
+            // console.log(answer.innerText);
+            // console.log(question.attributes.getNamedItem('--data-true-answer').value);
+            if (answer.innerText.trim() == question.attributes.getNamedItem('--data-true-answer').value.trim()){
                 if (typeof option.doTrue === 'function') option.doTrue(answer);
             }
             else {

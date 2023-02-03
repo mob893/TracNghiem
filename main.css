@@ -22,6 +22,8 @@ body {
 
 .set {
     position: absolute;
+    display: flex;
+    flex-flow: column wrap;
     left: 0;
     top: 0;
     padding: 1rem;
@@ -31,7 +33,7 @@ body {
 
 .set .question {
     margin: 1rem 0;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     padding: 1rem;
     border-radius: 1rem;
 }
@@ -54,9 +56,29 @@ body {
     border: 1px solid black;
     border-radius: 1rem;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 0.25s;
 }
 
 .set .question .answers .answer:hover {
-    background-color: rgb(162, 174, 192);
+    background-color: rgb(255, 255, 255);
+}
+
+.deleteBnt {
+    position: relative;
+    display: block;
+    width: 7rem;
+    height: 3rem;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    font-size: large;
+    font-weight: bolder;
+    border: 0px solid;
+    border-radius: 3px;
+    outline: none;
+    transition: border 0.2s ;
+}
+.deleteBnt:hover {
+    /* background-color: rgba(233, 222, 222, 0.842); */
+    border: 1px solid rgba(0, 0, 0, 0.322);
 }
